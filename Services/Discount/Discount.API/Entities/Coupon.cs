@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Discount.Grpc.Entities
+namespace Discount.API.Entities
 {
     public class Coupon
     {
