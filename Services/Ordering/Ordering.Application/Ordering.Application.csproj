@@ -21,6 +21,9 @@
     <None Remove="Features\Orders\Queries\" />
     <None Remove="Features\Orders\Queries\GetOrdersList\" />
     <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Features\Orders\Commands\CheckoutOrder\" />
+    <None Remove="Microsoft.Extensions.Logging.Abstractions" />
+    <None Remove="FluentValidation" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
@@ -34,9 +37,12 @@
     <Folder Include="Features\Orders\Commands\" />
     <Folder Include="Features\Orders\Queries\" />
     <Folder Include="Features\Orders\Queries\GetOrdersList\" />
+    <Folder Include="Features\Orders\Commands\CheckoutOrder\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.3.0" />
   </ItemGroup>
 </Project>
