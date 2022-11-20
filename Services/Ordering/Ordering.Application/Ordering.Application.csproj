@@ -24,6 +24,9 @@
     <None Remove="Features\Orders\Commands\CheckoutOrder\" />
     <None Remove="Microsoft.Extensions.Logging.Abstractions" />
     <None Remove="FluentValidation" />
+    <None Remove="Features\Orders\Commands\UpdateOrder\" />
+    <None Remove="Features\Orders\Commands\DeleteOrder\" />
+    <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
@@ -38,6 +41,9 @@
     <Folder Include="Features\Orders\Queries\" />
     <Folder Include="Features\Orders\Queries\GetOrdersList\" />
     <Folder Include="Features\Orders\Commands\CheckoutOrder\" />
+    <Folder Include="Features\Orders\Commands\UpdateOrder\" />
+    <Folder Include="Features\Orders\Commands\DeleteOrder\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
