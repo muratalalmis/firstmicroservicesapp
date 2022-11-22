@@ -47,7 +47,8 @@ namespace Ordering.API.Extensions
         private static void InvokeSeeder<TContext>(Action<TContext, IServiceProvider> seeder, TContext context, IServiceProvider services)
             where TContext : DbContext
         {
-            context.Database.Migrate();
+            // TODO : Code first migrations not supported on azure sql edge
+            //context.Database.Migrate();
             seeder(context, services);
         }
     }
