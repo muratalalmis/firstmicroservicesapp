@@ -11,6 +11,9 @@
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.50.0" />
+    <PackageReference Include="MassTransit" Version="7.1.6" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.1.6" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="7.1.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +25,9 @@
     <None Remove="Newtonsoft.Json" />
     <None Remove="Grpc.AspNetCore" />
     <None Remove="GrpcServices\" />
+    <None Remove="MassTransit" />
+    <None Remove="MassTransit.RabbitMQ" />
+    <None Remove="MassTransit.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -33,5 +39,10 @@
     <Protobuf Include="..\..\Discount\Discount.Grpc\Protos\discount.proto" GrpcServices="Client">
       <Link>Protos\discount.proto</Link>
     </Protobuf>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
