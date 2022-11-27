@@ -1,4 +1,10 @@
-﻿IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Orders]') AND type in (N'U'))
+﻿CREATE DATABASE OrderDb
+GO
+
+USE OrderDb
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Orders]') AND type in (N'U'))
 DROP TABLE [dbo].[Orders]
 GO
 
