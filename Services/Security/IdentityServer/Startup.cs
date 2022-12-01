@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using IdentityServer4.Models;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,10 +22,10 @@ namespace IdentityServer
 
             services.AddIdentityServer()
                 .AddInMemoryClients(Config.Clients)
-                .AddInMemoryIdentityResources(Config.IdentityResources)
-                .AddInMemoryApiResources(Config.ApiResources)
                 .AddInMemoryApiScopes(Config.ApiScopes)
-                .AddTestUsers(Config.TestUsers)
+                //.AddInMemoryIdentityResources(Config.IdentityResources)
+                //.AddInMemoryApiResources(Config.ApiResources)
+                //.AddTestUsers(Config.TestUsers)
                 .AddDeveloperSigningCredential();
         }
 
