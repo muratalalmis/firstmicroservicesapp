@@ -23,9 +23,9 @@ namespace IdentityServer
             services.AddIdentityServer()
                 .AddInMemoryClients(Config.Clients)
                 .AddInMemoryApiScopes(Config.ApiScopes)
-                //.AddInMemoryIdentityResources(Config.IdentityResources)
+                .AddInMemoryIdentityResources(Config.IdentityResources)
+                .AddTestUsers(Config.TestUsers)
                 //.AddInMemoryApiResources(Config.ApiResources)
-                //.AddTestUsers(Config.TestUsers)
                 .AddDeveloperSigningCredential();
         }
 
