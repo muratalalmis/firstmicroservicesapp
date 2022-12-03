@@ -33,14 +33,14 @@ namespace AspnetRunBasics
         public async Task<IActionResult> OnPostCheckOutAsync()
         {
             var userName = "swn";
-            Cart = await basketService.GetBasket("test");
+            Cart = await basketService.GetBasket(userName);
 
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            Order.UserName = "test";
+            Order.UserName = userName;
             Order.TotalPrice = Cart.TotalPrice;
 
             await basketService.CheckoutBasket(Order);
