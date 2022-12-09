@@ -4,6 +4,7 @@ using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using EventBus.Messages.Events;
 using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
@@ -13,6 +14,7 @@ namespace Basket.API.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
+    [Authorize("ClientIdPolicy")]
     public class BasketController : ControllerBase
     {
         private readonly IBasketRepository _repository;

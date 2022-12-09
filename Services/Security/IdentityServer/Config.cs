@@ -14,7 +14,7 @@ namespace IdentityServer
         {
             new Client
             {
-                ClientId = "catalogClient",
+                ClientId = "catalogAPIClient",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 ClientSecrets =
                 {
@@ -22,37 +22,33 @@ namespace IdentityServer
                 },
                 AllowedScopes = { "catalogAPI" }
             },
-            new Client()
+            new Client
             {
-                ClientId = "catalog_app_client",
-                ClientName = "Catalog App Client",
-                AllowedGrantTypes = GrantTypes.Code,
-                AllowRememberConsent = false,
-                RedirectUris = new List<string>()
-                {
-                    // TODO:
-                    "https://localhost:7000"
-                },
-                PostLogoutRedirectUris = new List<string>()
-                {
-                    // TODO: 
-                    "https:localhost:7000/sign-out-callback-oidc"
-                },
-                ClientSecrets = new List<Secret>()
+                ClientId = "basketAPIClient",
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets =
                 {
                     new Secret("secret".Sha256())
                 },
-                AllowedScopes = new List<string>
+                AllowedScopes = { "basketAPI" }
+            },
+            new Client
+            {
+                ClientId = "orderingAPIClient",
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets =
                 {
-                    IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile
-                }
-            }
+                    new Secret("secret".Sha256())
+                },
+                AllowedScopes = { "orderingAPI" }
+            },
         };
 
         public static IEnumerable<ApiScope> ApiScopes => new ApiScope[]
         {
-            new ApiScope("catalogAPI", "Catalog API")
+            new ApiScope("catalogAPI", "Catalog API"),
+            new ApiScope("basketAPI", "Basket API"),
+            new ApiScope("orderingAPI", "Ordering API"),
         };
 
         public static IEnumerable<ApiResource> ApiResources => new ApiResource[]
@@ -72,7 +68,7 @@ namespace IdentityServer
             {
                 SubjectId = "EC163A84-B0FE-44FB-8F92-04A93100800A",
                 Username = "murat",
-                Password = "murat",
+                Password = "123456",
                 Claims = new List<Claim>()
                 {
                     new Claim(JwtClaimTypes.GivenName, "murat"),

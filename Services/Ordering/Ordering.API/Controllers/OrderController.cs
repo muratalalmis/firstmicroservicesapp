@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Ordering.Application.Features.Orders.Commands.CheckoutOrder;
@@ -15,6 +16,7 @@ namespace Ordering.API.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
+    [Authorize("ClientIdPolicy")]
     public class OrderController : ControllerBase
     {
         private readonly IMediator mediator;

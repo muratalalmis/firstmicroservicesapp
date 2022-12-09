@@ -71,6 +71,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
+      - "IdentityServer:HostAddress=http://identityserver:8020"
     depends_on:
       - catalogdb
     ports:
@@ -165,3 +166,11 @@ services:
       - ordering.api
     ports:
       - "8006:80"
+
+  identityserver:
+    container_name: identityserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8020:80"
+

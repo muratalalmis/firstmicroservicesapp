@@ -12,6 +12,7 @@ namespace Catalog.API.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
+    [Authorize]
     //[Authorize("ClientIdPolicy")]
     public class CatalogController : ControllerBase
     {
